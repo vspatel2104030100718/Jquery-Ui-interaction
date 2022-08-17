@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Droppable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+    #draggable {
+     
+      width: 0%;
+    height: 0%;
+    /* padding: 0.5em; */
+    float: left;
+    /* margin: 10px 10px 10px 0; */
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 25px;
+    }
+
+    #droppable {
+      width: 70%;
+      height: 300px;
+      padding: 0.5em;
+      float: left;
+      margin: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    font-size: 25px;
+      border-radius: 10px;
+      color: rgb(8, 8, 8);
+      z-index: -1;
+    }
+   .ui-state-highlight{
+    background: rgb(91,198,81);
+background: linear-gradient(0deg, rgba(91,198,81,1) 28%, rgba(255,255,255,1) 49%, rgba(255,154,0,1) 100%);
+   } 
+    
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#draggable").draggable();
+      $("#droppable").droppable({
+        drop: function (event, ui) {
+          $(this)
+            .addClass("ui-state-highlight")
+            .find("p")
+            .html("Jay Hind","slow");
+             
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="draggable" class="ui-widget-content">
+    <img src="download.jpg" alt="" style="border-radius: 50%;">
+  </div>
+
+  <div id="droppable" class="ui-widget-header">
+    <p>Ashok chakra Drop here</p>
+  </div>
+
+
+</body>
+
+</html>
